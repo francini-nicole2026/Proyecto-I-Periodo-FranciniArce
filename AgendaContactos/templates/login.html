@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title><!--nombre del archivo-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_login.css') }}">  <!--conección con el archivo css usando Flask--> 
+</head>
+<body>
+    <div class="formulario"> <!--Se crea el contenedor en el que esta el formulario-->  
+        <img src="{{ url_for('static', filename='img_logo.png') }}" alt="Logo BeautyCare" class="logo-img"> <!--imagen del logo--> 
+
+        <div class="contenedor">
+             <!--mensaje de error (desde flask)--> 
+            {% if error %} 
+            <div class="mensaje-error">{{ error }}</div>
+            {% endif %}
+
+            <form method="POST" action="{{ url_for('login') }}">  <!--formulario de inicio de sesion--> 
+                
+                <!--campo de usuario--> 
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario" required>
+
+                <!--campo de contraseña--> 
+                <label for="contrasena"> <br>Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required>
+                
+                 <!--boton para ingresar-->
+                <button type="submit" class="boton-login">Ingresar</button>
+               
+            </form>
+
+              <!--imagen de decoracion--> 
+              <img src="{{ url_for('static', filename='decoracion.png') }}" alt="Decoracion" class="logo-decoracion">
+           
+        </div>
+    </div>
+     
+</body>
+</html>

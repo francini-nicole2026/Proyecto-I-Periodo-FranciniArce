@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Información del Contacto - BeautyCore</title><!-- nombre del archivo -->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_detalle.css') }}">   <!-- Conexión con el archivo CSS usando flask-->
+
+  <script src="{{ url_for('static', filename='js/js_confirmaciones.js') }}"></script> <!-- Conexión con el archivo JavaScript para confirmaciones usando flask  -->
+</head>
+
+<body>
+
+  <!-- encabezado -->
+  <header>
+    <div class="titulo-header">Sistema de contactos</div>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo BeautyCore" class="logo">
+
+    <nav>
+      <a href="{{ url_for('reporte') }}">Reportes</a>
+    </nav>
+  </header>
+
+  <!-- contenedor principal -->
+  <div class="contenedor">
+
+    <div class="top">
+      <a href="{{ url_for('lista') }}" class="btn-volver">Volver</a>
+      <h1>{{ contacto.nombre }}</h1>
+
+      <div class="acciones">
+        <a href="{{ url_for('editar', id=contacto.id) }}" class="btn-editar">✏️ Editar</a>
+
+        <form method="POST"
+              action="{{ url_for('eliminar', id=contacto.id) }}"
+              style="display:inline;"
+              onsubmit="return confirmarEliminar()">
+
+          <button type="submit" class="btn-eliminar">🗑️ Eliminar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- espacios con la información -->
+    <div class="info">
+
+      <h3>Información de contacto</h3>
+
+      <div class="campo">
+        <span class="icono">📞</span>
+        <div>
+          <label>Teléfono</label>
+          <p>{{ contacto.telefono }}</p>
+        </div>
+      </div>
+
+      <div class="campo">
+        <span class="icono">✉️</span>
+        <div>
+          <label>Email*</label>
+          <p>{{ contacto.correo }}</p>
+        </div>
+      </div>
+
+      <div class="campo">
+        <span class="icono">📅</span>
+        <div>
+          <label>Última Visita</label>
+          <p>{{ contacto.ultima_visita }}</p>
+        </div>
+      </div>
+
+      <div class="campo">
+        <span class="icono">✂️</span>
+        <div>
+          <label>Categoría</label>
+          <p>{{ contacto.categoria }}</p>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>Notas</label>
+        <p>{{ contacto.notas }}</p>
+      </div>
+
+      <div class="campo">
+        <label>Favorito</label>
+        <p>{{ contacto.favorito }}</p>
+      </div>
+
+      <div class="campo">
+        <label>Servicio</label>
+        <p>{{ contacto.servicio }}</p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

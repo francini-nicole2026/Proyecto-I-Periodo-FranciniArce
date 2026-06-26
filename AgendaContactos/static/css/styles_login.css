@@ -1,0 +1,96 @@
+
+/*Estilo general*/
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #bcb4b4; 
+    font-family: Arial, Helvetica, sans-serif;
+
+    /*ayuda a centrar*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/*estilo del contenedor del formulario */
+.formulario{
+    background-color: #245C6C; /* Fondo azul oscuro */
+    width: 400px;
+    height: 550px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgb(75, 77, 8);
+    position: relative;
+}
+
+
+
+/*estilo logo*/
+.logo-img{
+    width: 355px;
+    max-width: 100%;
+    height: auto;
+}
+
+/*estilo de la img de decoracion*/
+.logo-decoracion{
+    width: 250px;
+    position: absolute;
+    bottom: -50px;   /* ajusta aquí */
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+
+/*estilo de los labels */
+label{
+    color: #ffffff;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+
+    margin-bottom: 3px;
+    margin-top: -10px; 
+    margin-left: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*estilo de lo inputs */
+input{
+    width: 90%;
+    padding: 10px;
+    margin-top: 15px; 
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+    box-shadow: 0px 4px 10px rgb(104, 107, 9);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* estilo del boton*/
+.boton-login{
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #C9AF3F, #9B8425);
+    cursor: pointer;
+    margin-top: 30px;
+    color: #ffffff;
+}
+
+.boton-login:hover{
+background: linear-gradient(to right, #867010, #9B8425);
+}
+
+/*estilo del mensaje de error*/
+.mensaje-error{
+
+    color: rgb(239, 17, 17);
+    margin-bottom: 15px;
+    font-size: 14px;
+}

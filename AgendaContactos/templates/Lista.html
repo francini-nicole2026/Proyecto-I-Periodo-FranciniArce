@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Contactos - BeautyCore</title> <!--nombre del archivo-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_lista.css') }}"><!--conección con el archivo css usando Flask--> 
+</head>
+
+<body>
+
+  <!-- ENCABEZADO -->
+  <header>
+    <h1>Lista Contactos</h1>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo BeautyCore" class="logo-menu"><!--imagen del logo--> 
+
+    <!--menu--> 
+    <nav>
+      <a href="{{ url_for('reporte') }}">Reportes</a> 
+    </nav>
+  </header>
+
+  <!--contenedor -->
+  <div class="contenedor">
+
+    <!--buscador y botones-->
+    <div class="buscador">
+
+      <!--formulario para buscar--> 
+      <form method="POST">
+        <input type="text" name="nombre" placeholder="Buscar por nombre"> <!--espacio para bucar por nombre -->
+        <button type="submit">Buscar</button>
+        <a href="{{ url_for('lista') }}" class="btn-limpiar">Limpiar búsqueda</a> <!--btn para limpiar la busqueda -->
+      </form>
+
+      <a href="{{ url_for('lista', ordenar='nombre') }}" class="btn-ordenar">Ordenar por nombre</a> <!--btn para ordenar la lista por nombre -->
+      <a href="{{ url_for('agregar') }}" class="btn-nuevo">+ Nuevo Contacto</a> <!--btn para agregar un nuevo contacto-->
+    </div>
+
+    <!-- creacion de la tabla  -->
+    <table class="tabla-contactos">
+      <!--encabezado-->
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>Correo</th>
+          <th>Servicio</th>
+          <th>Información</th>
+        </tr>
+      </thead>
+      <tbody> <!--cuerpo de la taba-->
+        {% if contactos %}
+          {% for c in contactos %} <!--recorre la lista  -->
+          <tr>
+            <td>{{ c.nombre }} {{ c.apellido }}</td>
+            <td>📞 {{ c.telefono }}</td>
+            <td>{{ c.correo }}</td>
+            <td>{{ c.servicio }}</td>
+            <td>
+              
+             <a href="{{ url_for('detalle', id=c.id) }}" class="info">Más información</a>
+            </td>
+          </tr>
+          {% endfor %}
+        {% else %} <!--si no se encuentran contactos-->
+          <tr>
+            <td colspan="5">No hay contactos registrados.</td> <!--muestra un mensajito -->
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Contacto</title> <!-- nombre del archivo -->
+
+  <!-- Conexión con el archivo CSS usando flask-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_editar.css') }}">
+
+  <!-- Conexión con el archivo JavaScript para confirmaciones usando flask  -->
+  <script src="{{ url_for('static', filename='js/js_confirmaciones.js') }}"></script>
+</head>
+
+<body>
+
+  <!--encabezado-->
+  <header>
+
+    <!-- Título principal-->
+    <div class="titulo-header">Sistema de contactos</div>
+
+    <!-- Logo -->
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo BeautyCore" class="logo">
+
+    <!-- Menú de navegación -->
+    <nav>
+      <a href="{{ url_for('reporte') }}">Reportes</a>
+      
+    </nav>
+
+  </header>
+
+  <!-- contenedor principal -->
+  <div class="contenedor">
+
+    <div class="top">
+
+      <!-- Botón para regresar a la lista de contactos -->
+      <a href="{{ url_for('lista') }}" class="btn-volver">Volver</a>
+
+      <!-- Título de la sección -->
+      <h1>Editar Contacto</h1>
+
+    </div>
+
+    <!--formulario  -->
+    <form method="POST" class="formulario" onsubmit="return confirmarEdicion()">
+
+      <!-- Campo para editar el nombre -->
+      <label>Nombre:</label>
+      <input type="text" name="nombre" value="{{ contacto.nombre }}" required>
+
+      <!-- Campo para editar el teléfono -->
+      <label>Teléfono:</label>
+      <input type="text" name="telefono" value="{{ contacto.telefono }}">
+
+      <!-- Campo para editar el correo -->
+      <label>Correo:</label>
+      <input type="email" name="correo" value="{{ contacto.correo }}">
+
+      <!-- Campo para editar la última visita -->
+      <label>Última visita:</label>
+      <input type="text" name="ultima_visita" value="{{ contacto.ultima_visita }}">
+
+      <!-- Campo para editar el servicio preferido -->
+      <label>Servicio:</label>
+      <input type="text" name="servicio" value="{{ contacto.servicio }}">
+
+      <!-- Lista desplegable para seleccionar la categoría -->
+      <div class="grupo">
+        <label>Categoría</label>
+
+        <select name="categoria" required>
+          <option value="">Seleccione una categoría</option>
+          <option value="Nuevo">Nuevo</option>
+          <option value="Frecuente">Frecuente</option>
+          <option value="Ocasional">Ocasional</option>
+        </select>
+
+      </div>
+
+      <!-- Campo para editar notas-->
+      <label>Notas:</label>
+      <textarea name="notas">{{ contacto.notas }}</textarea>
+
+      <!-- BOTONES DE ACCIÓN -->
+      <div class="botones">
+
+        <!-- Botón para cancelar la edición -->
+        <a href="{{ url_for('lista') }}" class="btn-cancelar">Cancelar</a>
+
+        <!-- Botón para guardar los cambios realizados -->
+        <button type="submit" class="btn-agregar">Guardar Cambios</button>
+
+      </div>
+
+    </form>
+
+    <!-- Imagen decorativa ubicada en la parte inferior -->
+    <img src="{{ url_for('static', filename='decoracion.png') }}" alt="Decoración" class="logo-decoracion">
+
+  </div>
+
+</body>
+</html>

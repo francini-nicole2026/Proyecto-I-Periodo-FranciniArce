@@ -1,0 +1,175 @@
+/*estilo general*/
+body {
+  margin: 0;
+  background-color: #d9d9d9;
+  font-family: 'Playfair Display', serif;
+}
+
+/*estilo del header */
+header {
+  background-color: #111;
+  color: #E3B23C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 70px;
+  border-bottom: 3px solid #E3B23C;
+  position: relative;
+}
+
+.titulo-header {
+  font-size: 1.6em;
+  font-style: italic;
+  color: #E3B23C
+}
+
+
+/*estilo del logo*/
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: auto;
+}
+
+
+/*estilo del menu */
+nav {
+  display: flex;
+  gap: 35px;
+}
+
+nav a {
+  color: #E3B23C;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/*estilo del  contenedor principal*/
+.contenedor {
+  background: linear-gradient(to bottom, #0f5a70, #7f8c8d);
+  width: 60%;              
+  margin: 40px auto;       
+  border-radius: 25px;
+  border: 3px solid #E3B23C;
+  padding: 20px 40px;     
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  color: #E3B23C;
+}
+
+.top {
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.top h1 {
+  font-size: 2em;
+  color: black;
+  margin: 0;
+  text-align: center;
+  flex: 1; 
+}
+
+
+/*estilo del boton de volver*/
+.btn-volver {
+  position: absolute;
+  right: 0; 
+  background: linear-gradient(to right, #FFD700, #8A6D00);
+  border: none;
+  padding: 10px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  text-decoration: none;
+}
+
+/*estilo del formulario*/
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario label {
+  color: #E3B23C;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.formulario input,
+.formulario textarea {
+  border: 2px solid #E3B23C;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1em;
+  background-color: #efefef;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+/*estilo de las filas del formulario */
+.fila {
+  display: flex;
+  gap: 40px;
+}
+
+.grupo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* estilo de los botones*/
+.botones {
+  display: flex;
+  justify-content: center;   
+  gap: 150px;                
+  margin-top: 30px;
+}
+
+.btn-cancelar {
+  background-color: #C2210B;
+  color: black;
+  border: none;
+  padding: 15px 85px; /* un poco más compacto */
+  border-radius: 10px;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  text-decoration: none;
+}
+
+.btn-agregar {
+  background-color: #52A51B;
+  color: black;
+  border: none;
+  padding: 15px 80px; 
+  border-radius: 10px;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* decoracion*/
+.logo-decoracion {
+  width: 320px;
+  margin: 40px auto 0;
+  display: block;
+}

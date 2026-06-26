@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Contacto</title><!-- nombre del archivo -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_agregar.css') }}">  <!-- Conexión con el archivo CSS usando flask-->
+  <script>
+    //validacion del formulario 
+    function validarFormulario() {
+      const nombre = document.querySelector('input[name="nombre"]').value.trim();
+      const telefono = document.querySelector('input[name="telefono"]').value.trim();
+      const correo = document.querySelector('input[name="correo"]').value.trim();
+
+      // Validar campos obligatorios
+      if (!nombre || !telefono || !correo) {
+        alert("Los campos Nombre, Teléfono y Correo son obligatorios.");
+        return false;
+      }
+
+      // Validar teléfono 8 dígitos
+      if (!/^\d{8}$/.test(telefono)) {
+        alert("El número de teléfono debe tener exactamente 8 dígitos.");
+        return false;
+      }
+    // Validar correo
+    const patronCorreo = /^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$/;
+    if (!patronCorreo.test(correo)) {
+    alert("El correo electrónico debe tener un formato válido (ejemplo: usuario@dominio.com).");
+     return false;
+}
+
+
+
+
+      return true; // Si todo está correcto, se envía el formulario
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="titulo-header">Sistema de contactos</div>
+
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo"><!--img del logo-->
+   <!--menu-->
+    <nav>
+       <a href="{{ url_for('reporte') }}">Reportes</a> 
+    </nav>
+  </header>
+
+  <div class="contenedor">
+    <div class="top">
+      <h1>Nuevo Cliente</h1>
+      <a href="{{ url_for('lista') }}" class="btn-volver">Volver</a> <!--btn para devolver a la pagina de la lista -->
+    </div>
+
+
+    <!--formulario-->
+    <form class="formulario" method="POST" action="{{ url_for('agregar') }}" onsubmit="return validarFormulario()">
+      <label>Nombre completo*</label>
+      <input type="text" name="nombre" required>
+
+      <label>Correo*</label>
+     <input type="email" name="correo" required>
+
+     <label>Teléfono*</label>
+     <input type="number" name="telefono" required>
+
+    <div class="fila">
+  <div class="grupo">
+    <label>Última Visita</label>
+    <input type="date" name="ultima_visita">
+  </div>
+  
+  <div class="grupo">
+    <label>Categoria</label>
+    <select name="categoria" required>
+      <option value="">Seleccione una categoría</option>
+      <option value="Nuevo">Nuevo</option>
+      <option value="Frecuente">Frecuente</option>
+      <option value="Ocasional">Ocasional</option>
+      
+    </select>
+  </div>
+</div>
+
+      <label>Favorito:</label>
+      <select name="favorito">
+        <option value="No">No</option>
+        <option value="Sí">Sí</option>
+      </select>
+      
+      <label>servicio*</label>
+      <input type="text" name="servicio" required>
+      
+      <label>Notas</label>
+      <textarea name="notas"></textarea>
+
+
+   
+      <!--botones de cancelar y agregar-->
+      <div class="botones">
+         <a href="{{ url_for('lista') }}" class="btn-cancelar">Cancelar</a>
+        <button type="submit" class="btn-agregar">Agregar Nuevo Contacto</button>
+      </div>
+
+      <img src="{{ url_for('static', filename='decoracion.png') }}" alt="decoracion" class="logo-decoracion"> <!--img de decoracion-->
+    </form>
+  </div>
+</body>
+</html>
+

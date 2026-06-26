@@ -1,0 +1,169 @@
+
+/*estilo general*/
+body {
+  margin: 0;
+  background-color: #d9d9d9;
+  font-family: 'Playfair Display', serif;
+}
+
+/*estilo del header */
+header {
+  background-color: #111;
+  color: #E3B23C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 70px;
+  border-bottom: 3px solid #E3B23C;
+  position: relative;
+}
+
+
+
+/*estilo  del titulo*/
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+  font-weight: normal;
+  font-style: italic;
+  
+}
+
+/*estilo de la img del logo*/
+.logo-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: auto;
+}
+
+/* estilo del menu*/
+header nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  font-size: 20px;
+}
+
+header nav a {
+  color: #E3B23C;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #fff;
+}
+
+
+
+/* estilo del contenedor general*/
+.contenedor {
+  background: linear-gradient(180deg, #245C6C 0%, #6C7F87 100%);
+  width: 70%;
+  margin: 60px auto; /* espacio debajo del encabezado */
+  border-radius: 15px;
+  border: 2px solid #E3B23C;
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  color: #E3B23C;
+}
+
+/* estilo del cuadro de buscar */
+.buscador {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+.buscador form {
+  display: flex;
+  gap: 10px;
+}
+.buscador input[type="text"] {
+  width: 250px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #E3B23C;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+}
+.buscador button {
+  background: linear-gradient(180deg, #af9007 0%, #f0d25d 100%);
+  color: #0A4D4A;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.buscador button:hover {
+  background: linear-gradient(180deg, #CBA502 0%, #F5DC74 100%);
+}
+
+/* estilo de los botones*/
+.btn-limpiar,
+.btn-ordenar,
+.btn-nuevo {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.btn-limpiar {
+  background-color: #ccc;
+  color: #000;
+}
+
+.btn-ordenar {
+  background-color: #0A4D4A;
+  color: #fff;
+}
+
+.btn-nuevo {
+  background-color: #787a2f;
+  color: white;
+}
+
+.btn-nuevo:hover {
+  background-color: #646626;
+}
+
+/*estilo de la tabla*/
+.tabla-contactos {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 16px 25px; /* separa columnas y filas */
+}
+
+.tabla-contactos th {
+  text-align: center;
+  color: #E3B23C;
+}
+
+.tabla-contactos td {
+  background-color: #0E4250;
+  color: #fff;
+  border-radius: 10px;
+  padding: 8px;
+  text-align: center;
+}
+
+/*estilo para el cuadro de mas informacion*/
+.info {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.info:hover {
+  background: linear-gradient(180deg, #075a5f 100%);
+}

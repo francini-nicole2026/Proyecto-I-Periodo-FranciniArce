@@ -1,0 +1,124 @@
+/*estilo general*/
+body {
+  margin: 0;
+  background-color: #d9d9d9;
+  font-family: 'Playfair Display', serif;
+}
+
+/*estilo del header*/
+header {
+  background-color: #111;
+  color: #E3B23C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 70px;
+  border-bottom: 3px solid #E3B23C;
+  position: relative;
+}
+
+
+.titulo-header {
+  font-size: 1.6em;
+  font-style: italic;
+}
+/* estilo del la img del logo */
+.logo-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: auto;
+}
+
+/* estilo del menu*/
+nav {
+  display: flex;
+  gap: 35px;
+}
+
+nav a {
+  color: #E3B23C;
+  text-decoration: none;
+  font-weight: bold;
+  font-size:20px;
+}
+
+/* estilo del contenedor*/
+.contenedor {
+  width: 80%;
+  margin: 50px auto;
+  text-align: center;
+  color: #111;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+/* estilo de los bloques  */
+.bloques {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.bloque {
+  width: 250px;
+  height: 180px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+}
+/* estilo del cuadro de total*/
+.total {
+  background: linear-gradient(to bottom, #0f5a70, #7f8c8d);
+  border: 3px solid #E3B23C;
+}
+/* estilo del cuadro de favoritos*/
+.favoritos {
+  background: linear-gradient(to right, #FFD700, #8A6D00);
+  border: 3px solid #E3B23C;
+}
+
+.bloque h3 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.bloque p {
+  font-size: 1.2em;
+}
+/* estilo del boton de volver*/
+.btn-volver {
+  display: inline-block;
+  margin-top: 40px;
+  background: linear-gradient(to right, #FFD700, #8A6D00);
+  border: none;
+  padding: 12px 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* estilo de la decoración*/
+
+footer .decoracion {
+  width: 100%;
+  height: 40px;
+  background-color: #111;
+  border-top: 4px solid #E3B23C;
+
+  position: relative;
+  top: 130px;
+}

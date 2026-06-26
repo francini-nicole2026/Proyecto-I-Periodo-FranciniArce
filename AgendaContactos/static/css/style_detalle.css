@@ -1,0 +1,149 @@
+/* estilo general*/
+body {
+  margin: 0;
+  background-color: #d9d9d9;
+  font-family: 'Playfair Display', serif;
+}
+
+/*estilo header */
+header {
+  background-color: #111;
+  color: #E3B23C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 70px;
+  border-bottom: 3px solid #E3B23C;
+  position: relative;
+}
+
+.titulo-header {
+  font-size: 1.6em;
+  font-style: italic;
+  color: #E3B23C;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+}
+
+/* estilo del menu*/
+nav {
+  display: flex;
+  gap: 35px;
+}
+
+nav a {
+  color: #E3B23C;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* estilo del contenedor principal  */
+.contenedor {
+  background: linear-gradient(to bottom, #0f5a70, #7f8c8d);
+  width: 70%;
+  margin: 50px auto;
+  border-radius: 25px;
+  border: 3px solid #E3B23C;
+  padding: 40px 60px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  color: #E3B23C;
+}
+
+
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.top h1 {
+  font-size: 2em;
+  color: black;
+  margin: 0;
+}
+
+/* estilo de los botones */
+.btn-volver,
+.btn-editar,
+.btn-eliminar {
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.btn-volver {
+  background: linear-gradient(to right, #FFD700, #8A6D00);
+  color: black;
+}
+
+.btn-editar {
+  background: #52A51B;
+  color: black;
+}
+
+.btn-eliminar {
+  background: #C2210B;
+  color: white;
+}
+
+.acciones {
+  display: flex;
+  gap: 15px;
+}
+
+/*estilo de la informacion importante */
+.info {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* estilo de los campos*/
+.campo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  background-color: #efefef;
+  border: 2px solid #E3B23C;
+  border-radius: 12px;
+
+  padding: 15px 20px;
+  color: black;
+}
+
+/* icono */
+.icono {
+  font-size: 1.6em;
+  min-width: 35px;
+}
+
+/* texto interno */
+.campo div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* label */
+label {
+  font-weight: bold;
+  color: #444;
+}
+
+/* texto */
+p {
+  margin: 3px 0 0;
+}

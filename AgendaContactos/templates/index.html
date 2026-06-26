@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Página principal</title> <!--nombre del archivo-->
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}"> <!--conección con el archivo css usando Flask--> 
+
+
+</head>
+
+<body>
+    <img src="{{ url_for('static', filename='img_logo.png') }}" alt="Logo BeautyCare" class="logo-inicio"> <!--logo principal del salón de belleza-->  
+
+    <h1>Bienvenidos</h1> <!--titulo principal --> 
+    <br>
+  
+    <div class="logo">BeautyCore</div>  <!--nombre de la marca -->  
+
+    <div class="subtitulo">BEAUTY SALON</div>  <!--subtitulo -->  
+
+    <div class="decoracion"></div>  <!--linea de decoración -->  
+
+    <a href="{{ url_for('login') }}" class="boton-login">Ingresar</a>  <!-- Botón que redirige al login -->
+
+ 
+
+</body>
+</html>

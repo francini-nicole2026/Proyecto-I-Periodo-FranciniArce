@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reporte de Contactos</title><!--nombre del archivo-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_reporte.css') }}"><!--conección con el archivo css usando Flask--> 
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header>
+    <div class="titulo-header">Sistema de contactos</div>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo BeautyCore" class="logo-menu"><!--logo-->
+
+    <!--menu-->
+    <nav>
+      <a href="{{ url_for('lista') }}">Lista</a>
+      <a href="{{ url_for('agregar') }}">Agregar</a>
+      <a href="{{ url_for('reporte') }}">Reportes</a>
+    </nav>
+  </header>
+
+  <!-- Contenedor principal-->
+  <div class="contenedor">
+    <h2>Reporte General</h2>
+
+    <div class="bloques">
+      <!-- Bloque para rl total de los contactos-->
+      <div class="bloque total">
+        <h3>{{ total_contactos }}</h3>
+        <p>Total Contactos</p>
+      </div>
+
+      <!-- Bloque para el total de favoritos -->
+      <div class="bloque favoritos">
+        <h3>{{ favoritos }}</h3>
+        <p>Contactos Favoritos</p>
+      </div>
+    </div>
+
+    <div class="volver">
+      <a href="{{ url_for('lista') }}" class="btn-volver">Volver</a> <!--btn para volver a la pantalla de la lista-->
+    </div>
+  </div>
+
+  <footer>
+    <div class="decoracion"></div>
+  </footer>
+
+</body>
+</html>
+
